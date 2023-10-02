@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widget_y_formatos/config/menu/menu_items.dart';
-import 'package:widget_y_formatos/config/presentation/screens/botton/botton_screen.dart';
+import 'package:widget_y_formatos/config/presentation/screens/button/buttons_screen.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
 static const String name = 'home_screen';
@@ -53,15 +54,15 @@ class _CustomListTitle extends StatelessWidget {
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
       onTap: () {
-         Navigator.of(context).push(
+     /*     Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => const ButtonScreen(), )
         );
         Navigator.pushNamed(context, menuItem.link);
 
-       // context.pushNamed(CardsScreen.name); 
+       // context.pushNamed(CardsScreen.name);  */
 
-        //context.push(menuItem.link);
+       context.push(menuItem.link);
       },
     );
   }

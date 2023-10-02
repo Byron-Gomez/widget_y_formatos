@@ -1,7 +1,7 @@
 
-
 import 'package:go_router/go_router.dart';
 import 'package:widget_y_formatos/config/presentation/screens/home/home_screen.dart';
+import 'package:widget_y_formatos/config/presentation/screens/screens.dart';
 
 final appRouter = GoRouter(
 initialLocation: '/',
@@ -15,14 +15,20 @@ routes:[
 
     GoRoute(
       path: '/buttons',
-      name: HomeScreen.name,
-      builder: (context, state) => const HomeScreen()
+      name: ButtonScreen.name,
+      builder: (context, state) => const ButtonScreen()
     ),
 
     GoRoute(
       path: '/cards',
-      name: HomeScreen.name,
-      builder: (context, state) => const HomeScreen()
+      name: CardsScreen.name,
+      builder: (context, state) => const CardsScreen()
+    ),
+
+    GoRoute(
+      path: '/progress',
+      name: ProgressScreen.name,
+      builder: (context, state) => const ProgressScreen()
     ),
 ]
 );
