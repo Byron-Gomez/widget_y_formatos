@@ -1,4 +1,4 @@
-name: widget_y_formatos
+name: widget_formato
 description: A new Flutter project.
 
 publish_to: "none"
@@ -13,7 +13,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_riverpod: ^2.4.3
   go_router: ^11.1.2
+  riverpod: ^2.4.3
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -24,4 +26,4 @@ flutter:
   uses-material-design: true
 
   assets:
-  - assets/images/
+    - assets/images/

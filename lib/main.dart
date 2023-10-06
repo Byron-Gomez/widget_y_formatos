@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:widget_y_formatos/config/presentation/screens/home/home_screen.dart';
-import 'package:widget_y_formatos/config/router/app_router.dart';
-import 'package:widget_y_formatos/config/theme/app_theme.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:widget_formato/config/router/app_router.dart';
+import 'package:widget_formato/config/theme/app_theme.dart';
+import 'package:widget_formato/presentation/providers/theme_provider.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(
+  const ProviderScope(
+    child: MyApp())
+    ); //cambiar a llave si no funciona
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget{
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
+  Widget build(BuildContext context, WidgetRef ref) {
+
+    final AppTheme appTheme = ref.watch(themeNotifierProvider);
+    return  MaterialApp.router(
+      title: 'Flutter Widgets',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 4).getTheme(),
-   
-        );
+      theme: appTheme.getTheme(),
+      
+  
+    );
   }
 }
